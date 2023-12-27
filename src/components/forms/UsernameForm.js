@@ -6,7 +6,9 @@ import {redirect} from "next/navigation";
 import {useState} from "react";
 
 export default function UsernameForm({desiredUsername}) {
-  const [taken,setTaken] = useState(false);
+  
+    const [taken,setTaken] = useState(false);
+
   async function handleSubmit(formData) {
     const result = await grabUsername(formData);
 
