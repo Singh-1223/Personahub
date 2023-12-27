@@ -11,13 +11,17 @@
   "dependencies": {
     "@auth/mongodb-adapter": "^2.0.10",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "clone-deep": "^4.0.1",
     "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
     "next": "14.0.2",
     "next-auth": "^4.24.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
