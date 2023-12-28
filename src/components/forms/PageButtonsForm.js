@@ -1,3 +1,4 @@
+
 'use client';
 
 import {savePageButtons} from "@/actions/pageActions";
@@ -35,8 +36,11 @@ function upperFirst(str) {
 }
 
 export default function PageButtonsForm({user,page}) {
+  //  console.log(page);
+  // const pageSavedButtonsKeys = Object.keys(page.buttons);
+  const pageSavedButtonsKeys = page.buttons ? Object.keys(page.buttons) : [];
 
-  const pageSavedButtonsKeys = Object.keys(page.buttons);
+
   const pageSavedButtonsInfo = pageSavedButtonsKeys
     .map(k => allButtons.find(b => b.key === k));
   const [activeButtons, setActiveButtons] = useState(pageSavedButtonsInfo);
@@ -63,6 +67,7 @@ export default function PageButtonsForm({user,page}) {
 
   return (
     <SectionBox>
+      {/* {JSON.stringify(pageSavedButtonsKeys)} */}
       <form action={saveButtons}>
         <h2 className="text-2xl font-bold mb-4">Buttons</h2>
         <ReactSortable
@@ -82,7 +87,9 @@ export default function PageButtonsForm({user,page}) {
                 <input
                   placeholder={b.placeholder}
                   name={b.key}
-                  defaultValue={page.buttons[b.key]}
+                  // defaultValue={page.buttons[b.key]}
+                  defaultValue={page.buttons && page.buttons[b.key] ? page.buttons[b.key] : ''}
+
                   type="text" style={{marginBottom:'0'}} />
                 <button
                   onClick={() => removeButton(b)}
