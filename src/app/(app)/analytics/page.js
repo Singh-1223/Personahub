@@ -49,15 +49,26 @@ export default async function AnalyticsPage() {
     page: page.uri,
     type: 'click',
   });
-
+  //  console.log(groupedViews);
+  //  console.log(groupedViews[0]);
+  //  if(groupedViews == []){
+  //   console.log('hi');
+  //  }else{
+  //   console.log('no')
+  //  }
+   
+  // console.log(groupedViews[0].count);
   return (
     <div>
       <SectionBox>
         <h2 className="text-xl mb-6 text-center">Views</h2>
-        <Chart data={groupedViews.map(o => ({
+        {groupedViews[0] != undefined ?  (<Chart data={groupedViews.map(o => ({
           'date': o._id,
           'views': o.count,
-        }))} />
+        }))} />) :
+        "No views currently"
+        }
+       
       </SectionBox>
       <SectionBox>
         <h2 className="text-xl mb-6 text-center">Clicks</h2>

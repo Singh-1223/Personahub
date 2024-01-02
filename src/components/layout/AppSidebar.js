@@ -6,10 +6,27 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 
-export default function AppSidebar() {
+export default function AppSidebar({page}) {
   const path = usePathname();
   return (
     <nav className="inline-flex mx-auto flex-col text-center mt-8 gap-2 text-gray-500">
+      {page && (
+      <Link
+        target="_blank"
+        href={'/'+page.uri}
+        className={
+          "flex gap-4 p-2 "
+          + (path === '/account' ? 'text-blue-500' : '')
+        }>
+        <FontAwesomeIcon
+          fixedWidth={true}
+          icon={faFileLines}
+          className={'w-6 h-6'}
+        />
+        <span className="">My Profile</span>
+      </Link>
+      )}
+
       <Link
         href={'/account'}
         className={
@@ -21,7 +38,7 @@ export default function AppSidebar() {
           icon={faFileLines}
           className={'w-6 h-6'}
         />
-        <span className="">My Page</span>
+        <span className="">Edit Profile</span>
       </Link>
       <Link
         href={'/analytics'}

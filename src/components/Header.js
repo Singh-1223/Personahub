@@ -16,18 +16,17 @@ export default async function Header() {
             <FontAwesomeIcon icon={faLink} className="text-blue-500" />
             <span className="font-bold">Personahub</span>
           </Link>
-          <nav className="flex items-center gap-4 text-slate-500 text-sm">
+          <nav className="flex items-center gap-4 text-slate-500 text-sm mr-2">
             <Link href={'/about'}>About</Link>
-            <Link href={'/pricing'}>Pricing</Link>
             <Link href={'/contact'}>Contact</Link>
           </nav>
         </div>
         <nav className="flex items-center gap-4 text-sm text-slate-500">
           {!!session && (
             <>
-              <Link href={'/account'}>
+              {/* <Link href={'/account'}>
                 Hello, {session?.user?.name}
-              </Link>
+              </Link> */}
               <LogoutButton />
             </>
           )}
