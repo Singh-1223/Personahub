@@ -34,10 +34,12 @@ export default async function Home() {
               </div>
 
               {page && (
+                <div className="flex  items-center">
+                  <h2 className="mr-3 font-bold">Profile : </h2>
                 <Link
                   target="_blank"
                   href={"/" + page.uri}
-                  className="text-center mt-4 flex gap-1 items-center justify-center"
+                  className="text-center  flex gap-1 items-center justify-center"
                 >
                   <FontAwesomeIcon
                     size="lg"
@@ -47,6 +49,7 @@ export default async function Home() {
                   <span className="text-xl text-gray-300">/</span>
                   <span>{page.uri}</span>
                 </Link>
+                </div>
               )}
             </>
           )}
