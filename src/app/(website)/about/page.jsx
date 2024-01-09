@@ -16,7 +16,7 @@ const page = () => {
       Tired of juggling a dozen social media and professional links.  
        We get it. That is why we built LinkFree, your one-stop shop for showcasing your entire digital presence.
       
-    </p>  // eslint-disable-line react/no-unescaped-entities
+    </p>  
     <div className="mt-8 flex flex-wrap justify-around md:justify-center gap-4">
       <Card
         icon="fa-user"
